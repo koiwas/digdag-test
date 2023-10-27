@@ -1,0 +1,10 @@
+timezone: Asia/Tokyo
+
++error:
+    fail>: This workflow is NG.
+
+    _check:
+        echo>: This workflow is OK.
+
+    _error:
+        echo>: error occurred(${error.message})

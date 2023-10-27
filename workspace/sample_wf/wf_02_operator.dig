@@ -1,0 +1,51 @@
+# タイムゾーン指定
+timezone: Asia/Tokyo
+
+# 変数定義
+_export:
+  cond: true
+
+# タスク定義
++task:
+  echo>: ${session_time}
+
+# 条件分岐
++condition:
+  if>: ${cond}
+  _do:
+    echo>: cond is ${cond}.
+  _else_do:
+    echo>: cond is ${cond}.
+
+# 繰り返し処理
++loop:
+  loop>: 3
+  _do:
+    echo>: loop=${i}
+
+# 配列の繰り返し処理
++for_each:
+  for_each>:
+    var1:
+      - dog
+      - cat
+      - rabbit
+    var2:
+      - like
+      - hate
+  _do:
+    echo>: I ${var2} a ${var1}.
+
+# 呼び出し
++call:
+  call>: wf_01_hello.dig
+
+# 並列実行
++parallel:
+  _parallel: true
+  +step1:
+    echo>: step1
+  +step2:
+    echo>: step2
+  +step3:
+    echo>: step3
