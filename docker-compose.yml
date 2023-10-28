@@ -2,12 +2,29 @@ version: "3"
 
 services:
     digdag:
-        image: digdag:latest
+        container_name: digdag
         build:
             context: .
             dockerfile: Dockerfile
         volumes:
             - ./workspace:/workspace
-        command: bash -c 'digdag server --memory --bind 0.0.0.0'
+        # command: bash -c 'digdag server --memory --bind 0.0.0.0'
         ports:
             - 65432:65432
+        depends_on:
+            - postgres
+
+    postgres:
+        container_name: postgres
+        image: postgres:latest
+        environment:
+            - POSTGRES_USER=digdag
+            - POSTGRES_PASSWORD=digdag
+            - POSTGRES_DB=digdag
+        ports:
+            - 5432:5432
+        volumes:
+            - digdag_pgdata:/var/lib/postgresql/data
+
+volumes:
+    digdag_pgdata:
