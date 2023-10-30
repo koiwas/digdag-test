@@ -16,15 +16,17 @@ services:
 
     postgres:
         container_name: postgres
-        image: postgres:latest
+        image: postgres:12-alpine
         environment:
             - POSTGRES_USER=digdag
             - POSTGRES_PASSWORD=digdag
             - POSTGRES_DB=digdag
+            - POSTGRES_HOST_AUTH_METHOD=trust
         ports:
             - 5432:5432
         volumes:
             - digdag_pgdata:/var/lib/postgresql/data
+            - ./workspace/initdb:/docker-entrypoint-initdb.d
 
 volumes:
     digdag_pgdata:

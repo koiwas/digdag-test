@@ -1,0 +1,12 @@
+timezone: Asia/Tokyo
+
+_export:
+  pg:
+    host: postgres
+    port: 5432
+    database: digdag
+    user: digdag
+    password: digdag
+
++create_table:
+  pg>: queries/create.sql

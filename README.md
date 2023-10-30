@@ -38,7 +38,8 @@ Fill out the server connection settings as follows:
 
 ## Sample command
 
-### Initialize the Project and Run the Workflow
+### digdag
+#### Initialize the Project and Run the Workflow
 ```
 digdag init sample
 ```
@@ -49,7 +50,22 @@ cd sample
 digdag run sample.dig
 ```
 
-### Push the Project to the Digdag server
+#### Push the Project to the Digdag server
 ```
 digdag push sample -e localhost:65432
+```
+
+### postgres
+#### Connect to the database
+```
+psql -U digdag -d digdag
+```
+
+#### List the tables
+```
+\dt
+```
+#### Select data from a table
+```
+SELECT * FROM sample_data_new;
 ```
