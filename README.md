@@ -31,18 +31,20 @@ Fill out the server connection settings as follows:
 ```
 - Host/Address: localhost
 - Port: 5432
-- Maintenance Database: diggdag
-- Username: diggdag
+- Maintenance Database: digdag
+- Username: digdag
 - Password: digdag
 ```
 
 ## Sample command
 
 ### digdag
-#### Initialize the Project and Run the Workflow
+#### Create the sample project
 ```
 digdag init sample
 ```
+
+#### Run the sample workflow on local
 ```
 cd sample
 ```
@@ -53,6 +55,11 @@ digdag run sample.dig
 #### Push the Project to the Digdag server
 ```
 digdag push sample -e localhost:65432
+```
+
+#### Run the sample workflow on the Digdag server
+```
+digdag start sample sample --session now -e localhost:65432
 ```
 
 ### postgres
@@ -67,5 +74,5 @@ psql -U digdag -d digdag
 ```
 #### Select data from a table
 ```
-SELECT * FROM sample_data_new;
+SELECT * FROM sample_data;
 ```
