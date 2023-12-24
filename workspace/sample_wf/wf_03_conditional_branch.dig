@@ -1,0 +1,10 @@
+timezone: Asia/Tokyo
+
++greeting:
+  if>: ${moment().hour >= 12}
+  _do:
+    +afternoon:
+      echo>: Good afternoon!
+  _else_do:
+    +morning:
+      echo>: Good morning!
