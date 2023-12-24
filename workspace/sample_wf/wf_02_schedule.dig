@@ -1,11 +1,19 @@
+# タイムゾーン指定
 timezone: Asia/Tokyo
 
+# スケジュール定義
 schedule:
   cron>: 30 10 * * *
 
+# 変数定義
 _export:
   breed: shiba
   name: uni
 
-+echo:gi
+# タスク定義
++task:
   echo>: ${name} is ${breed}.
+
+# WFの呼び出し
++call:
+  call>: wf_01_hello.dig
