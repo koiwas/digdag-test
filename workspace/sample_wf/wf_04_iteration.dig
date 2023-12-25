@@ -1,0 +1,12 @@
++for_each:
+  for_each>:
+    fruit: [apple, banana, cherry]
+  _do:
+    +echo:
+      echo>: ${fruit}
+
++loop:
+  loop>: 3
+  _do:
+    +echo:
+      echo>: This task is repeated.
