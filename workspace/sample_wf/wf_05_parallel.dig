@@ -1,0 +1,8 @@
++parallel:
+  _parallel: true
+  +step1:
+    echo>: step1
+  +step2:
+    echo>: step2
+  +step3:
+    echo>: step3
