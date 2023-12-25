@@ -1,0 +1,7 @@
+timezone: Asia/Tokyo
+
++parent_task:
+  echo>: This is a parent task!
+
++call_child_task:
+  call>: wf_08b_child_wf.dig

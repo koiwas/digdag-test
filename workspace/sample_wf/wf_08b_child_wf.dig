@@ -1,0 +1,4 @@
+timezone: Asia/Tokyo
+
++child_task:
+  echo>: This is a child workflow!
