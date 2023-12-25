@@ -1,3 +1,5 @@
+timezone: Asia/Tokyo
+
 +for_each:
   for_each>:
     fruit: [apple, banana, cherry]

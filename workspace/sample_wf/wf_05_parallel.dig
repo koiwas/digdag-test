@@ -1,3 +1,5 @@
+timezone: Asia/Tokyo
+
 +parallel:
   _parallel: true
   +step1:

@@ -1,2 +1,4 @@
+timezone: Asia/Tokyo
+
 +echo:
   echo>: hello
